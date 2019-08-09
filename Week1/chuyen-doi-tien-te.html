@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <center>
+        <h2>AMOUNT</h2>
+        <input type="text" id="sotien" value=""><br>
+        <span style="color:blue"><h2>FROM CURRENCY</h2></span>
+        <select id="chon">
+            <option value="USD">USD</option>
+            <option value="VND">VND</option>
+            <option value="YEN">YEN</option>
+        </select>
+        <h3>TO CURRENCY</h3>
+        <select id="chon2">
+            <option value="VND">VND</option>
+            <option value="USD">USD</option>
+            <option value="YEN">YEN</option>
+        </select>
+        <h2>Số Tiền</h2>
+        <input type="text" id="output" disabled><br>
+        <button  onclick="onclickbtn();" >Convert</button>
+        <p id="test"></p>
+    </center>
+    <script>
+        function onclickbtn(){
+
+            let a = document.getElementById("chon").value;
+            let b = document.getElementById("chon2").value;
+            let many = parseFloat(document.getElementById("sotien").value);
+            let output;
+
+            if (a == "VND" && b == "USD" ){
+                output = many /23000;
+            } else if (a == "USD" && b == "VND"){
+                output = many*23000;
+            }else if (a == "VND" && b == "YEN"){
+                output = many/218.18;
+            }else if( a == "USD" && b == "YEN"){
+                output = many*106.168383;
+            }else if (a == "YEN" && b == "USD"){
+                output = many/106.168383;
+            }else if (a == "YEN" && b == "VND"){
+                output = many*218.18;
+            }else output = 1;
+            document.getElementById("output").value = output;
+            console.log(output);
+        }
+    </script>
+</head>
+
+<body>
+</body>
+
+</html>
