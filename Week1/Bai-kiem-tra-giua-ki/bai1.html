@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>bai1</title>
+    <script>
+        var n;
+        do {
+            n = prompt("Nhập số : ");
+            if (!isNaN(n)){
+                break;
+            }else {
+                alert("Số nhập chưa đúng! Xin nhập lại!")
+            }
+        }while (isNaN(n));
+        function check_snt()
+        {
+            var flag = true;
+            if (n < 2){
+                flag = false;
+            }
+            else{
+
+                for (var i = 2; i < n; i++)
+                {
+                    if (n % i == 0){
+                        flag = false;
+                        break;
+                    }
+                }
+            }
+            if (flag == true){
+                document.write(n + " là số nguyên tố <br/>");
+            }
+            else{
+                document.write(n + " không phải là số nguyên tố <br/>");
+            }
+        }
+        check_snt();
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>
